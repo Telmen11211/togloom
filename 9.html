@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="mn">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Нүүр хуудас</title>
+        <style>
+            body {
+                background: url('zurag2.jpg') no-repeat center center/cover;
+                display: flex;
+                justify-content: center;
+                height: 100%;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .container {
+                display: flex;
+                margin-top: 130px;
+                width: 100%;
+                height: 600px;
+                border-radius: 15px;
+                max-width: 1000px;
+                overflow: hidden;
+            }
+            .div1 {
+                display: flex;
+                background: url('zurag2.jpg') no-repeat center center/cover;
+                width: 40%;
+                padding: 40px;
+                flex-direction: column;
+                text-align: center;          
+            }
+            .div2 {
+                width: 60%;
+                padding: 40px;
+                background-color: white;
+                
+            }
+            a{
+                font-size: 25px;
+                color: white;
+                margin: 50px 0px;
+            }
+            .button1{
+                width: 250px;
+                padding: 10px;
+                color: white;
+                background-color: lightgrey;
+                border:solid white 2px;
+                border-radius: 6px;
+                font-size: 16px;
+            } 
+            .button1:hover{
+                background-color: #ccc;
+            }
+            .button2{
+                width: 535px;
+                padding: 15px;
+                color: white;
+                background-color: rgb(136, 216, 155);
+                border-radius: 4px;
+                font-size: 16px;
+                border: solid rgb(136, 216, 155) 1px;
+                margin-top: 40px;
+            }
+            .button2:hover{
+                background-color: #4CAF50;
+            }
+            .form-group1{
+                display: flex;
+                height: 100px;
+            }
+            .form-group2 {
+                margin-bottom: 15px;
+                margin-top: 15px;
+            }
+            .form-groupjij1{
+                display: flex; 
+                flex-direction: column; 
+                margin-right: 15px
+            }
+            .form-groupjij2{
+                display: flex; 
+                flex-direction: column;
+            }
+            .input1{
+                width: 255px;
+                height: 50px;
+                margin-top: 40px;
+                border-radius: 5px;
+                border: solid  rgb(155,155,155) 2px;
+            }
+            .input2{
+                width: 500px;
+                padding: 15px;
+                border-radius: 5px;
+                border: solid  rgb(155,155,155) 2px;
+            }
+            .p1{
+                font-size: 50px;
+                font-weight: 600;
+                color: white;
+                margin-top: 100px;
+            }
+            .p2{
+                font-family: Arial, Helvetica, sans-serif;
+                color: rgb(155,155,155);
+            } 
+            @media (max-width: 768px){
+            .container {
+            flex-direction: column;
+            align-items: center;
+            height: 1200px;
+            }
+           .div1{
+           width: 100%;
+           }
+          .div2{
+          width: 100%;
+          padding-left: 250px;
+          }
+          } 
+            p::after{
+                content: " 👀";
+            }
+        </style>
+    </head>
+    <body>
+         <div class="container">
+             <div class="div1">
+                <label class="p1"> Бүргүүлэх </label>
+                <a> Аккунт байгаа юу? </a>
+                <a href="10.html"><button class="button1">Нэвтрэх</button></a>
+             </div>
+             <div class="div2">
+               <form>
+                <div class="form-group1">
+                    <div class="form-groupjij1">
+                        <label class="p2">Нэр</label>
+                        <input type="text" placeholder="Нэр" class="input1" required>
+                    </div>
+                    <div class="form-groupjij2">
+                        <label class="p2">Овог</label>
+                        <input type="text" placeholder="Овог" class="input1" required>
+                    </div>
+                </div>
+                <div class="form-group2">
+                    <p class="p2" >Хэрэглэгчийн Нэр</p>
+                    <input type="text" placeholder="Хэрэглэгчийн Нэр"  class="input2" required>
+                </div>
+                <div class="form-group2">
+                    <p class="p2" >Email</p>
+                    <input type="email" placeholder="Email" class="input2" required>
+                </div>
+                <div class="form-group2">
+                    <p class="p2" >Нууц Үг</p>
+                    <input type="password" placeholder="Нууц Үг" class="input2" required>
+                </div>
+                    <button type="submit" class="button2">Бүргүүлэх</button>
+               </form>
+             </div>
+         </div>
+    </body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <title>Шагайн морь уралдаан</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: white;
+      font-family: sans-serif;
+      user-select: none; 
+    }
+    .game-container {
+      background-color: #d2d2d2;
+      color: #000;
+      border-radius: 10px;
+      padding: 20px;
+      position: relative;
+    }
+    .track {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      position: relative;
+      height: 70px;
+    }
+    .track-line {
+      flex: 1;
+      border-bottom: 2px dashed black;
+      margin-left: 80px;
+    }
+    .finish-line {
+      width: 15px;
+      height: 60px;
+      background-image: repeating-linear-gradient(
+        to bottom,
+        black 0, black 7px,
+        white 7px, white 14px
+      );
+      position: absolute;
+      right: 0;
+      top: 5px;
+    }
+    .horse {
+      width: 60px;
+      position: absolute; 
+      top: 5px;
+      left: 0;
+      cursor: grab;
+      transition: left 0.5s;
+    }
+    .dice-img {
+      width: 50px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container mt-4">
+  <h3 class="text-success">ДАСГАЛ АЖИЛ - Шагайн морь уралдаан</h3>
+  
+  <div class="game-container mt-3">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <div>
+        <strong>Ээлж:</strong> <span id="turnLabel">Тоглогч 1</span>
+      </div>
+      <button class="btn btn-warning" onclick="roll()">Шагай орхих</button>
+    </div>
+    <div class="mb-3" id="shagaiContainer">
+    </div>
+
+    
+    <div class="track">
+      <strong>ТОГЛОГЧ 1</strong>
+      <img id="horse1" src="Mori.png" class="horse" alt="Морь">
+      <div class="track-line"></div>
+      <div class="finish-line"></div>
+    </div>
+
+  
+    <div class="track">
+      <strong>ТОГЛОГЧ 2</strong>
+      <img id="horse2" src="Mori.png" class="horse" alt="Морь">
+      <div class="track-line"></div>
+      <div class="finish-line"></div>
+    </div>
+
+    <div id="winnerMessage" class="mt-3 fs-4 text-success fw-bold"></div>
+  </div>
+</div>
+
+<script>
+  let pos1 = 0;
+  let pos2 = 0;
+  let turn = 1; 
+  const finishLine = 1200; 
+
+
+  const shagaiTypes = [
+    { name: "Морь", src: "Shagai_Mori.png", step: 1 },
+    { name: "Тэмээ", src: "Shagai_Temee.png", step: 0 },
+    { name: "Хонь", src: "Shagai_Honi.png", step: 0 },
+    { name: "Ямаа", src: "Shagai_Ymaa.png", step: 0 }
+  ];
+ 
+  function roll() {
+    if (pos1 >= finishLine || pos2 >= finishLine) return;
+
+    const container = document.getElementById("shagaiContainer");
+    container.innerHTML = "";
+
+    let totalSteps = 0;
+
+
+    for (let i = 0; i < 4; i++) {
+      const rand = Math.floor(Math.random() * shagaiTypes.length);
+      const shagai = shagaiTypes[rand];
+
+      const img = document.createElement("img");
+      img.src = shagai.src;
+      img.alt = "Шагай: " + shagai.name;
+      img.className = "dice-img me-1";
+      container.appendChild(img);
+
+      totalSteps += shagai.step;
+    }
+
+    const movePx = totalSteps * 120;
+
+    if (turn === 1) {
+      pos1 += movePx;
+      document.getElementById("horse1").style.left = pos1 + "px";
+      turn = 2;
+    } else {
+      pos2 += movePx;
+      document.getElementById("horse2").style.left = pos2 + "px";
+      turn = 1;
+    }
+
+    document.getElementById("turnLabel").innerText = `Тоглогч ${turn}`;
+    checkWinner();
+  }
+
+  function checkWinner() {
+    const msg = document.getElementById("winnerMessage");
+    if (pos1 >= finishLine) {
+      msg.innerText = "🥇 Тоглогч 1 түрүүллээ!";
+    } else if (pos2 >= finishLine) {
+      msg.innerText = "🥇 Тоглогч 2 түрүүллээ!";
+    }
+  }
+
+  function makeDraggable(element) {
+    let isDragging = false;
+    let offsetX = 0;
+    let offsetY = 0;
+    
+    element.addEventListener("mousedown", function(e) {
+      isDragging = true;
+      offsetX = e.clientX - parseInt(window.getComputedStyle(element).left);
+      offsetY = e.clientY - parseInt(window.getComputedStyle(element).top);
+      element.style.cursor = "grabbing";
+    });
+    
+    document.addEventListener("mousemove", function(e) {
+      if (isDragging) {
+        const newX = e.clientX - offsetX;
+        const newY = e.clientY - offsetY;
+        element.style.left = newX + "px";
+        element.style.top = newY + "px";
+      }
+    });
+    
+    document.addEventListener("mouseup", function() {
+      if (isDragging) {
+        isDragging = false;
+        element.style.cursor = "grab";
+      }
+    });
+  }
+
+
+  document.addEventListener("DOMContentLoaded", function() {
+    makeDraggable(document.getElementById("horse1"));
+    makeDraggable(document.getElementById("horse2"));
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            display: flex;
+        }
+        #sidebar {
+            width: 250px;
+            height: 100vh;
+            background: #343a40;
+            color: white;
+            padding: 20px;
+        }
+        #content {
+            flex: 1;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="sidebar">
+        <h4>Dashboard</h4>
+        <div class="d-flex flex-column">
+          <a href="15.html" class="mb-2">
+            <button class="btn btn-primary w-100">Analytics</button>
+          </a>
+          <a href="16.html" class="mb-2">
+            <button class="btn btn-secondary w-100">Contact</button>
+          </a>
+          <a href="17.html">
+            <button class="btn btn-success w-100">Project</button>
+          </a>
+        </div>
+      </div>      
+    <div id="content">
+        <h2>Contact List</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Position</th>
+                    <th>Email</th>
+                    <th>Tags</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Donald Risher</td>
+                    <td>UI/UX Designer</td>
+                    <td>DonaldRisher@dashonic.com</td>
+                    <td><span class="badge bg-primary">Photoshop</span> <span class="badge bg-info">Illustrator</span></td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">Action</button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Edit</a></li>
+                                <li><a class="dropdown-item" href="#">Delete</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Helen Barron</td>
+                    <td>Frontend Developer</td>
+                    <td>HelenBarron@dashonic.com</td>
+                    <td><span class="badge bg-info">HTML</span> <span class="badge bg-warning">CSS</span></td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">Action</button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Edit</a></li>
+                                <li><a class="dropdown-item" href="#">Delete</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
