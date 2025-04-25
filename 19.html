@@ -69,7 +69,6 @@
     <div class="mb-3" id="shagaiContainer">
     </div>
 
-    
     <div class="track">
       <strong>ТОГЛОГЧ 1</strong>
       <img id="horse1" src="Mori.png" class="horse" alt="Морь">
@@ -77,7 +76,6 @@
       <div class="finish-line"></div>
     </div>
 
-  
     <div class="track">
       <strong>ТОГЛОГЧ 2</strong>
       <img id="horse2" src="Mori.png" class="horse" alt="Морь">
@@ -86,6 +84,11 @@
     </div>
 
     <div id="winnerMessage" class="mt-3 fs-4 text-success fw-bold"></div>
+
+    <!-- Дахин тоглох товч -->
+    <div class="mt-3">
+      <button id="restartBtn" class="btn btn-success d-none" onclick="restartGame()">Дахин тоглох</button>
+    </div>
   </div>
 </div>
 
@@ -95,14 +98,13 @@
   let turn = 1; 
   const finishLine = 1200; 
 
-
   const shagaiTypes = [
     { name: "Морь", src: "Shagai_Mori.png", step: 1 },
     { name: "Тэмээ", src: "Shagai_Temee.png", step: 0 },
     { name: "Хонь", src: "Shagai_Honi.png", step: 0 },
     { name: "Ямаа", src: "Shagai_Ymaa.png", step: 0 }
   ];
- 
+
   function roll() {
     if (pos1 >= finishLine || pos2 >= finishLine) return;
 
@@ -110,7 +112,6 @@
     container.innerHTML = "";
 
     let totalSteps = 0;
-
 
     for (let i = 0; i < 4; i++) {
       const rand = Math.floor(Math.random() * shagaiTypes.length);
@@ -143,25 +144,42 @@
 
   function checkWinner() {
     const msg = document.getElementById("winnerMessage");
+    const restartBtn = document.getElementById("restartBtn");
+
     if (pos1 >= finishLine) {
       msg.innerText = "🥇 Тоглогч 1 түрүүллээ!";
+      restartBtn.classList.remove("d-none");
     } else if (pos2 >= finishLine) {
       msg.innerText = "🥇 Тоглогч 2 түрүүллээ!";
+      restartBtn.classList.remove("d-none");
     }
+  }
+
+  function restartGame() {
+    pos1 = 0;
+    pos2 = 0;
+    turn = 1;
+
+    document.getElementById("horse1").style.left = "0px";
+    document.getElementById("horse2").style.left = "0px";
+    document.getElementById("turnLabel").innerText = "Тоглогч 1";
+    document.getElementById("shagaiContainer").innerHTML = "";
+    document.getElementById("winnerMessage").innerText = "";
+    document.getElementById("restartBtn").classList.add("d-none");
   }
 
   function makeDraggable(element) {
     let isDragging = false;
     let offsetX = 0;
     let offsetY = 0;
-    
+
     element.addEventListener("mousedown", function(e) {
       isDragging = true;
       offsetX = e.clientX - parseInt(window.getComputedStyle(element).left);
       offsetY = e.clientY - parseInt(window.getComputedStyle(element).top);
       element.style.cursor = "grabbing";
     });
-    
+
     document.addEventListener("mousemove", function(e) {
       if (isDragging) {
         const newX = e.clientX - offsetX;
@@ -170,7 +188,7 @@
         element.style.top = newY + "px";
       }
     });
-    
+
     document.addEventListener("mouseup", function() {
       if (isDragging) {
         isDragging = false;
@@ -178,7 +196,6 @@
       }
     });
   }
-
 
   document.addEventListener("DOMContentLoaded", function() {
     makeDraggable(document.getElementById("horse1"));
