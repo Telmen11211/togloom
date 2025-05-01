@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8">
+  <title>FileReader() - Excel Upload</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    table, th, td {
+      border: 1px solid black;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<h1>FileReader()</h1>
+
+<input type="file" id="upload" accept=".xlsx, .xls" />
+<div id="excelData"></div>
+
+<script>
+document.getElementById('upload').addEventListener('change', function(e) {
+  const file = e.target.files[0];
+  const reader = new FileReader();
+  
+  reader.onload = function(e) {
+    const data = new Uint8Array(e.target.result);
+    const workbook = XLSX.read(data, { type: 'array' });
+    
+    const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+    const excelRows = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
+
+    let table = '<table>';
+    excelRows.forEach((row, index) => {
+      table += '<tr>';
+      row.forEach(cell => {
+        if (index === 0) {
+          table += `<th>${cell}</th>`;
+        } else {
+          table += `<td>${cell}</td>`;
+        }
+      });
+      table += '</tr>';
+    });
+    table += '</table>';
+    
+    document.getElementById('excelData').innerHTML = table;
+  };
+
+  reader.readAsArrayBuffer(file);
+});
+</script>
+
+</body>
+</html>
