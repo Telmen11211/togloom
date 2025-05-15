@@ -3,47 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mandarin chinese restaurant</title>
-    <!-- Bootstrap CSS -->
+    <title>Red Star Billiard & Karaoke</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
     <style>
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('b2.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('r3.jpg');
             background-size: cover;
             background-position: center;
             color: white;
             padding: 100px 0;
             margin-top: 56px;
         }
-        
-        .car-card {
+        .card {
             transition: transform 0.3s;
             margin-bottom: 20px;
         }
-        
-        .car-card:hover {
+        .card:hover {
             transform: translateY(-10px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
-        
         .features-section {
             background-color: #f8f9fa;
             padding: 60px 0;
         }
-        
         .feature-icon {
             font-size: 2.5rem;
             color: #cc0000;
             margin-bottom: 15px;
         }
-        
         .section-title {
             position: relative;
             margin-bottom: 40px;
             padding-bottom: 15px;
         }
-        
         .section-title::after {
             content: '';
             position: absolute;
@@ -54,195 +46,255 @@
             height: 3px;
             background-color: #cc0000;
         }
-        
-        .toyota-red {
+        .red {
             color: #cc0000;
         }
-        
         footer {
             background-color: #343a40;
             color: white;
             padding: 40px 0;
-        }
-        
+        } 
         .contact-info i {
             margin-right: 10px;
             color: #cc0000;
         }
     </style>
 </head>
-    <!-- ... HEAD хэсэг өөрчлөгдөөгүй тул шууд BODY хэсгээс эхэлж байна -->
-
-<!-- Hero Section -->
-<section id="home" class="hero-section text-center">
-    <div class="container">
-        <h1 class="display-3 fw-bold">Welcome to Toyota Dealership</h1>
-        <p class="lead">Discover the perfect Toyota vehicle for your lifestyle</p>
-        <a href="#foods" class="btn btn-danger btn-lg mt-3">Explore Foods</a>
-    </div>
-</section>
-
-<!-- About Section -->
-<section id="about" class="py-5">
-    <!-- ... энэ хэсэг өөрчлөгдөөгүй ... -->
-</section>
-
-<!-- Foods Section (өмнө нь Cars байсныг Foods болгосон) -->
-<section id="foods" class="py-5 bg-light">
-    <div class="container">
-        <h2 class="section-title text-center">Our Foods</h2>
-        <div class="row" id="carContainer">
-            <!-- Foods will be loaded here via JavaScript -->
-        </div>
-    </div>
-</section>
-
-<!-- Features Section -->
-<section id="features" class="features-section">
-    <!-- ... -->
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="py-5">
-    <!-- ... -->
-</section>
-
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <h5>Toyota Dealership</h5>
-                <p>Your trusted partner for quality Toyota vehicles. We provide exceptional service and a wide range of Toyota models to meet your needs.</p>
-            </div>
-            <div class="col-md-4">
-                <h5>Quick Links</h5>
-                <ul class="list-unstyled">
-                    <li><a href="#home" class="text-white">Home</a></li>
-                    <li><a href="#about" class="text-white">About</a></li>
-                    <li><a href="#foods" class="text-white">Foods</a></li>
-                    <li><a href="#features" class="text-white">Features</a></li>
-                    <li><a href="#contact" class="text-white">Contact</a></li>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+               Red Star Billiard & Karaoke
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#menu">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
                 </ul>
             </div>
-            <div class="col-md-4">
-                <h5>Connect With Us</h5>
-                <div class="social-icons">
-                    <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
-                    <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </nav>
+    <section id="home" class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-3 fw-bold">Welcome to Red Star Billiard & Karaoke</h1>
+        </div>
+    </section>
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="section-title text-center">Бидний тухай</h2>
+                    <p>Red Star Billiard & Karaoke нь Улаанбаатар хотын төв хэсэгт байрлах, амралт зугаатай өнгөрөөх боломжтой орчин үеийн энтертайнмент төв юм. Манай клуб нь биллиард, снукер, караоке, ширээний теннис, дартс, хөл бөмбөгийн ширээ зэрэг олон төрлийн сонирхолтой тоглоомуудыг нэг дор санал болгодог. </p>
+                    <p>Бид 10–20 хүний багтаамжтай VIP өрөөнүүдээр үйлчлүүлэгчдэд тав тухтай, хувийн орчныг бүрдүүлэн, найз нөхөд, хамт олон, гэр бүлийн хүрээнд хөгжилтэй цагийг өнгөрүүлэх боломжийг олгож байна.</p>
+                    <p>Red Star нь мөн төрөл бүрийн амттай хоол, ундаагаар үйлчилдэг бөгөөд үйлчлүүлэгчдийн тав тухыг нэн тэргүүнд тавьдаг найрсаг хамт олонтой.</p>
+                </div>
+                <div class="col-lg-6">
+                    <img src="r4.jpg" class="img-fluid rounded">
                 </div>
             </div>
         </div>
-        <hr class="mt-4 mb-4 bg-light">
-        <div class="text-center">
-            <p>&copy; 2025 Toyota Dealership. All Rights Reserved.</p>
+    </section>
+    <section id="menu" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center">Бидний меню</h2>
+            <div class="row" id="carContainer">
+            </div>
         </div>
-    </div>
-</footer>
-
-<!-- Bootstrap JS and Font Awesome -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
-<!-- Custom JavaScript -->
-<script>
-    // Car data
-    const cars = [
-        {
-            id: 1,
-            name: "амталсан будаа",
-            description: "Шарсан махтай хамгийн төгс зохицох амталсан будаа",
-            image: "b3.jpg"
-        },
-        {
-            id: 2,
-            name: "Нимгэн төмстэй үхрийн мах",
-            description: "Төгс амт",
-            image: "b11.jpg"
-        },
-        {
-            id: 3,
-            name: "Toyota Corolla",
-            price: "$20,000",
-            description: "The Toyota Corolla is an economical and reliable compact car with excellent fuel efficiency. It comes with Toyota Safety Sense and a user-friendly infotainment system.",
-            image: "b5.jpg"
-        },
-        {
-            id: 4,
-            name: "Toyota Highlander",
-            price: "$35,000",
-            description: "The Toyota Highlander is a spacious three-row SUV perfect for families. It offers a comfortable ride, ample cargo space, and advanced safety features.",
-            image: "b6.jpg"
-        },
-        {
-            id: 5,
-            name: "Toyota Tacoma",
-            price: "$27,000",
-            description: "The Toyota Tacoma is a rugged and reliable pickup truck known for its off-road capabilities and durability. Perfect for work or adventure.",
-            image: "b7.jpg"
-        },
-        {
-            id: 6,
-            name: "Toyota Prius",
-            price: "$24,500",
-            description: "The Toyota Prius is a pioneering hybrid vehicle with exceptional fuel economy. It features a comfortable interior, smooth ride, and eco-friendly technology.",
-            image: "b8.jpg"
-        }
-    ];
-
-    // Load cars
-    document.addEventListener('DOMContentLoaded', function() {
-        const carContainer = document.getElementById('carContainer');
-        
-        cars.forEach(car => {
-            const carCard = document.createElement('div');
-            carCard.className = 'col-md-4';
-            carCard.innerHTML = `
-                <div class="card car-card">
-                    <img src="${car.image}" class="card-img-top" alt="${car.name}" style="height: 200px; object-fit: cover;">
-                    <div class="card-body">
-                        <h5 class="card-title">${car.name}</h5>
-                        <p class="card-text">${car.description}</p>
-                        <a href="#contact" class="btn btn-danger">Inquire Now</a>
+    </section> 
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title text-center">Яагаад Биднийг сонгох хэрэгтэй вэ?</h2>
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-menu"></i>
+                    </div>
+                    <h4>Бүхнийг нэг дор</h4>
+                    <p>Биллиард, караоке, дартс, ширээний теннис зэрэг олон төрлийн сонирхолтой үйлчилгээг нэг дороос.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h4>Тав тухтай орчин </h4>
+                    <p> VIP өрөөнүүдтэй, найз нөхөдтэйгөө чөлөөтэй амарч, баяр тэмдэглэхэд тохиромжтой.</p>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Чанартай үйлчилгээ </h4>
+                    <p>Найрсаг хамт олон, цэвэрхэн, тохилог орчин, амттай хоол, ундаа.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Contact Us</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <form id="contactForm">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="phone">
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-danger">Send Message</button>
+                    </form>
+                </div>
+                <div class="col-md-6">
+                    <div class="contact-info mt-4 mt-md-0">
+                        <h4>Visit Our Restaurant</h4>
+                        <p><i class="fas fa-map-marker-alt"></i>Сүхбаатар дүүрэг, Бльюмоны баруун талд, хуучнаар архивын байрны 3 давхарт (Хүмүүнлэгийн зүүн талд)</p>
+                        <p><i class="fas fa-phone"></i>8085 1522</p>
+                        <p><i class="fas fa-envelope"></i>FB: Red Star Billiard & Karaoke </p>
+                        <h5 class="mt-4">Business Hours</h5>
+                        <p>Биллиард өдрийн 11 цагаас эхлэн бильярд 03:00, цаг хүртэл ажиллана.</p>
+                        <p>Караоке өдрийн 11 цагаас эхлэн караоке 05:00, цаг хүртэл ажиллана.</p>
                     </div>
                 </div>
-            `;
-            carContainer.appendChild(carCard);
-        });
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#home" class="text-white">Home</a></li>
+                        <li><a href="#about" class="text-white">About</a></li>
+                        <li><a href="#foods" class="text-white">Foods</a></li>
+                        <li><a href="#features" class="text-white">Features</a></li>
+                        <li><a href="#contact" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-4 mb-4 bg-light">
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
 
-        // Form validation
-        const contactForm = document.getElementById('contactForm');
-        contactForm.addEventListener('submit', function(event) {
-            event.preventDefault();
+       const card = [
+    {
+        id: 1,
+        name: "амталсан будаа",
+        description: "Шарсан мах эсвэл ногоотой хослуулахад төгс, өндөг, хүнсний ногоотой хуурсан амтлаг будаа.",
+        image: "b3.jpg"
+    },
+    {
+        id: 2,
+        name: "Нимгэн төмстэй үхрийн мах",
+        description: "Төгс шарж хуурсан үхрийн махыг нимгэн хэрчсэн төмс, сонгино, амтлагчтай хослуулсан халуун хоол.",
+        image: "b11.jpg"
+    },
+    {
+        id: 3,
+        name: "Ногоотой хуурга",
+        description: "Шүүслэг тахианы махыг амтат чинжүү, сонгино, сармисаар амталж шарсан жинхэнэ Хятад маягийн хоол.",
+        image: "b5.jpg"
+    },
+    {
+        id: 4,
+        name: "Шарсан загас",
+        description: "Гүн амт шингээсэн загасны махыг халуун чинжүү, сармис, сонгинотой шарж бэлтгэсэн амтлаг хоол.",
+        image: "b6.jpg"
+    },
+    {
+        id: 5,
+        name: "Махан Хуурга",
+        description: "Халуун гашуун амттай сүмсээр амталсан мах, сармисаар амталж ногооны төгс зохицол бүхий жигнэсэн хуурга.",
+        image: "b7.jpg"
+    },
+    {
+        id: 6,
+        name: "Шарсан Хаш",
+        description: "Гүн тосонд шарж, сүмсээр амталсан зөөлөн хашыг шинэ ногоотой хамт зөөлөн жигнэж хийсэн Хятад хоол.",
+        image: "b8.jpg"
+    }
+];
+
+document.addEventListener('DOMContentLoaded', function() {
+    const carContainer = document.getElementById('carContainer');
+    
+    card.forEach(food => {
+        const cardCol = document.createElement('div');
+        cardCol.className = 'col-md-4';
+        cardCol.innerHTML = `
+            <div class="card">
+                <img src="${food.image}" class="card-img-top" alt="${food.name}" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title">${food.name}</h5>
+                    <p class="card-text">${food.description}</p>
+                </div>
+            </div>
+        `;
+        carContainer.appendChild(cardCol);
+    });
+
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        if (name && email && message) {
+            alert('Thank you for your message! We will contact you soon.');
+            contactForm.reset();
+        } else {
+            alert('Please fill in all required fields.');
+        }
+    });
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
             
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            if (name && email && message) {
-                alert('Thank you for your message! We will contact you soon.');
-                contactForm.reset();
-            } else {
-                alert('Please fill in all required fields.');
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                window.scrollTo({
+                    top: target.offsetTop,
+                    behavior: 'smooth'
+                });
             }
         });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
     });
-</script>
+});
+
+    </script>
+</body>
 </html>
