@@ -6,8 +6,12 @@
     <title>Red Star Billiard & Karaoke</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
+        body {
+            background-color: #121212;
+            color: white;
+        }
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('r3.jpg');
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('r3.jpg');
             background-size: cover;
             background-position: center;
             color: white;
@@ -17,14 +21,18 @@
         .card {
             transition: transform 0.3s;
             margin-bottom: 20px;
+            background-color: #2c2c2c;
+            color: white;
+            border: none;
         }
         .card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 20px rgba(255,255,255,0.1);
         }
         .features-section {
-            background-color: #f8f9fa;
+            background-color: #1c1c1c;
             padding: 60px 0;
+            color: white;
         }
         .feature-icon {
             font-size: 2.5rem;
@@ -35,6 +43,7 @@
             position: relative;
             margin-bottom: 40px;
             padding-bottom: 15px;
+            color: white;
         }
         .section-title::after {
             content: '';
@@ -50,13 +59,27 @@
             color: #cc0000;
         }
         footer {
-            background-color: #343a40;
+            background-color: #1a1a1a;
             color: white;
             padding: 40px 0;
         } 
         .contact-info i {
             margin-right: 10px;
             color: #cc0000;
+        }
+        a.nav-link, a.text-white {
+            color: #ddd !important;
+        }
+        a.nav-link:hover, a.text-white:hover {
+            color: #cc0000 !important;
+        }
+        .form-control {
+            background-color: #1f1f1f;
+            color: white;
+            border: 1px solid #444;
+        }
+        .form-control::placeholder {
+            color: #aaa;
         }
     </style>
 </head>
@@ -100,9 +123,7 @@
             <div class="row">
                 <div class="col-lg-6">
                     <h2 class="section-title text-center">Бидний тухай</h2>
-                    <p>Red Star Billiard & Karaoke нь Улаанбаатар хотын төв хэсэгт байрлах, амралт зугаатай өнгөрөөх боломжтой орчин үеийн энтертайнмент төв юм. Манай клуб нь биллиард, снукер, караоке, ширээний теннис, дартс, хөл бөмбөгийн ширээ зэрэг олон төрлийн сонирхолтой тоглоомуудыг нэг дор санал болгодог. </p>
-                    <p>Бид 10–20 хүний багтаамжтай VIP өрөөнүүдээр үйлчлүүлэгчдэд тав тухтай, хувийн орчныг бүрдүүлэн, найз нөхөд, хамт олон, гэр бүлийн хүрээнд хөгжилтэй цагийг өнгөрүүлэх боломжийг олгож байна.</p>
-                    <p>Red Star нь мөн төрөл бүрийн амттай хоол, ундаагаар үйлчилдэг бөгөөд үйлчлүүлэгчдийн тав тухыг нэн тэргүүнд тавьдаг найрсаг хамт олонтой.</p>
+                    <p>Red Star Billiard & Karaoke нь Улаанбаатар хотын төв хэсэгт байрлах, амралт зугаатай өнгөрөөх боломжтой орчин үеийн энтертайнмент төв юм...</p>
                 </div>
                 <div class="col-lg-6">
                     <img src="r4.jpg" class="img-fluid rounded">
@@ -110,11 +131,10 @@
             </div>
         </div>
     </section>
-    <section id="menu" class="py-5 bg-light">
+    <section id="menu" class="py-5 bg-dark text-white">
         <div class="container">
             <h2 class="section-title text-center">Бидний меню</h2>
-            <div class="row" id="carContainer">
-            </div>
+            <div class="row" id="carContainer"></div>
         </div>
     </section> 
     <section id="features" class="features-section">
@@ -122,23 +142,17 @@
             <h2 class="section-title text-center">Яагаад Биднийг сонгох хэрэгтэй вэ?</h2>
             <div class="row text-center">
                 <div class="col-md-4">
-                    <div class="feature-icon">
-                        <i class="fas fa-menu"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-menu"></i></div>
                     <h4>Бүхнийг нэг дор</h4>
                     <p>Биллиард, караоке, дартс, ширээний теннис зэрэг олон төрлийн сонирхолтой үйлчилгээг нэг дороос.</p>
                 </div>
                 <div class="col-md-4">
-                    <div class="feature-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-leaf"></i></div>
                     <h4>Тав тухтай орчин </h4>
-                    <p> VIP өрөөнүүдтэй, найз нөхөдтэйгөө чөлөөтэй амарч, баяр тэмдэглэхэд тохиромжтой.</p>
+                    <p>VIP өрөөнүүдтэй, найз нөхөдтэйгөө чөлөөтэй амарч, баяр тэмдэглэхэд тохиромжтой.</p>
                 </div>
                 <div class="col-md-4">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
                     <h4>Чанартай үйлчилгээ </h4>
                     <p>Найрсаг хамт олон, цэвэрхэн, тохилог орчин, амттай хоол, ундаа.</p>
                 </div>
@@ -173,12 +187,11 @@
                 <div class="col-md-6">
                     <div class="contact-info mt-4 mt-md-0">
                         <h4>Visit Our Restaurant</h4>
-                        <p><i class="fas fa-map-marker-alt"></i>Сүхбаатар дүүрэг, Бльюмоны баруун талд, хуучнаар архивын байрны 3 давхарт (Хүмүүнлэгийн зүүн талд)</p>
+                        <p><i class="fas fa-map-marker-alt"></i>Сүхбаатар дүүрэг, Бльюмоны баруун талд...</p>
                         <p><i class="fas fa-phone"></i>8085 1522</p>
                         <p><i class="fas fa-envelope"></i>FB: Red Star Billiard & Karaoke </p>
                         <h5 class="mt-4">Business Hours</h5>
-                        <p>Биллиард өдрийн 11 цагаас эхлэн бильярд 03:00, цаг хүртэл ажиллана.</p>
-                        <p>Караоке өдрийн 11 цагаас эхлэн караоке 05:00, цаг хүртэл ажиллана.</p>
+                        <p>Биллиард 11:00–03:00, Караоке 11:00–05:00</p>
                     </div>
                 </div>
             </div>
@@ -192,13 +205,10 @@
                     <ul class="list-unstyled">
                         <li><a href="#home" class="text-white">Home</a></li>
                         <li><a href="#about" class="text-white">About</a></li>
-                        <li><a href="#foods" class="text-white">Foods</a></li>
+                        <li><a href="#menu" class="text-white">Foods</a></li>
                         <li><a href="#features" class="text-white">Features</a></li>
                         <li><a href="#contact" class="text-white">Contact</a></li>
                     </ul>
-                </div>
-                <div class="col-md-4">
-                    </div>
                 </div>
             </div>
             <hr class="mt-4 mb-4 bg-light">
@@ -207,94 +217,70 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
-
-       const card = [
-    {
-        id: 1,
-        name: "амталсан будаа",
-        description: "Шарсан мах эсвэл ногоотой хослуулахад төгс, өндөг, хүнсний ногоотой хуурсан амтлаг будаа.",
-        image: "b3.jpg"
-    },
-    {
-        id: 2,
-        name: "Нимгэн төмстэй үхрийн мах",
-        description: "Төгс шарж хуурсан үхрийн махыг нимгэн хэрчсэн төмс, сонгино, амтлагчтай хослуулсан халуун хоол.",
-        image: "b11.jpg"
-    },
-    {
-        id: 3,
-        name: "Ногоотой хуурга",
-        description: "Шүүслэг тахианы махыг амтат чинжүү, сонгино, сармисаар амталж шарсан жинхэнэ Хятад маягийн хоол.",
-        image: "b5.jpg"
-    },
-    {
-        id: 4,
-        name: "Шарсан загас",
-        description: "Гүн амт шингээсэн загасны махыг халуун чинжүү, сармис, сонгинотой шарж бэлтгэсэн амтлаг хоол.",
-        image: "b6.jpg"
-    },
-    {
-        id: 5,
-        name: "Махан Хуурга",
-        description: "Халуун гашуун амттай сүмсээр амталсан мах, сармисаар амталж ногооны төгс зохицол бүхий жигнэсэн хуурга.",
-        image: "b7.jpg"
-    },
-    {
-        id: 6,
-        name: "Шарсан Хаш",
-        description: "Гүн тосонд шарж, сүмсээр амталсан зөөлөн хашыг шинэ ногоотой хамт зөөлөн жигнэж хийсэн Хятад хоол.",
-        image: "b8.jpg"
-    }
-];
-
-document.addEventListener('DOMContentLoaded', function() {
-    const carContainer = document.getElementById('carContainer');
-    
-    card.forEach(food => {
-        const cardCol = document.createElement('div');
-        cardCol.className = 'col-md-4';
-        cardCol.innerHTML = `
-            <div class="card">
-                <img src="${food.image}" class="card-img-top" alt="${food.name}" style="height: 200px; object-fit: cover;">
-                <div class="card-body">
-                    <h5 class="card-title">${food.name}</h5>
-                    <p class="card-text">${food.description}</p>
-                </div>
-            </div>
-        `;
-        carContainer.appendChild(cardCol);
-    });
-
-    const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        
-        if (name && email && message) {
-            alert('Thank you for your message! We will contact you soon.');
-            contactForm.reset();
-        } else {
-            alert('Please fill in all required fields.');
-        }
-    });
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
+        const card = [
+            {
+                id: 1,
+                name: "Меню",
+                description: "Манай амтат хоолны цэсэнд олон төрлийн зоогууд багтсан.",
+                image: "r5.jpg"
+            },
+            {
+                id: 2,
+                name: "БИЛЬЯРД ПҮҮЛ",
+                description: "Өрөө том: 25.000₮ Өрөө том:30.000₮ Өрөө жижиг: 20.000₮ Заалны ширээ: 15.000₮",
+                image: "r6.jpg"
+            },
+            {
+                id: 3,
+                name: "Karaoke",
+                description: "Өрөө том: 35.000₮ - Багтаамж 10-12 хүн Өрөө жижиг: 25.000₮ - Багтаамж 6-8 хүн",
+                image: "r7.jpg"
+            },
             
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                window.scrollTo({
-                    top: target.offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-});
+        ];
+        document.addEventListener('DOMContentLoaded', function () {
+            const carContainer = document.getElementById('carContainer');
+            card.forEach(card => {
+                const cardCol = document.createElement('div');
+                cardCol.className = 'col-md-4';
+                cardCol.innerHTML = `
+                    <div class="card">
+                        <img src="${card.image}" class="card-img-top" alt="${card.name}" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">${card.name}</h5>
+                            <p class="card-text">${card.description}</p>
+                        </div>
+                    </div>
+                `;
+                carContainer.appendChild(cardCol);
+            });
+            const contactForm = document.getElementById('contactForm');
+            contactForm.addEventListener('submit', function (event) {
+                event.preventDefault();
+                const name = document.getElementById('name').value;
+                const email = document.getElementById('email').value;
+                const message = document.getElementById('message').value;
 
+                if (name && email && message) {
+                    alert('Thank you for your message! We will contact you soon.');
+                    contactForm.reset();
+                } else {
+                    alert('Please fill in all required fields.');
+                }
+            });
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
