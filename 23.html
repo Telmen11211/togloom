@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+  <meta charset="UTF-8" />
+  <title>FileReader()</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <style>
+    body {
+      background-color: #000;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      color: white;
+    }
+    input[type="file"] {
+      margin-bottom: 20px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background-color: white;
+      color: black;
+    }
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>FileReader()</h1>
+  <input type="file" id="fileInput" accept=".xlsx, .xls" />
+  <div id="tableContainer"></div>
+
+  <script>
+    document.getElementById('fileInput').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      const reader = new FileReader();
+      
+      reader.onload = function(e) {
+        const data = new Uint8Array(e.target.result);
+        const workbook = XLSX.read(data, {type: 'array'});
+        const sheetName = workbook.SheetNames[0];
+        const sheet = workbook.Sheets[sheetName];
+        const json = XLSX.utils.sheet_to_json(sheet, {header: 1});
+        
+        let table = '<table>';
+        json.forEach((row, i) => {
+          table += '<tr>';
+          row.forEach(cell => {
+            table += i === 0 ? `<th>${cell}</th>` : `<td>${cell}</td>`;
+          });
+          table += '</tr>';
+        });
+        table += '</table>';
+        
+        document.getElementById('tableContainer').innerHTML = table;
+      };
+
+      reader.readAsArrayBuffer(file);
+    });
+  </script>
+</body>
+</html>
